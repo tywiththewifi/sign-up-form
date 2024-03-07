@@ -1,13 +1,164 @@
 * {
     margin:0;
     box-sizing: border-box;
-    padding:0
+    padding:0;
+    
+}
+
+@font-face {
+    font-family: "logo";
+    src: url(fonts/Figurativative.ttf);
+}
+
+main {
+    height: 100vh;
+    font-size: 16px;
+    font-family:Lato, Cambria, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container {
-    display: flex
+    display: flex;
+    height: 100vh;
 }
 
 .leftHalf {
-    background-image: url("images/IMG_6592.JPG");
+    background-image: url("images/IMG_6590.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 40%;
+    display: flex;
+}
+
+.rightHalf {
+    height: 100vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    background-color: #f9fafb;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.3);
+    max-height: 100px;
+    width: 100%;
+    position: relative;
+    top: 210px; 
+    /* justify-content: center; */
+}
+
+.icon {
+    max-width: 70px;
+    height: auto;
+    object-fit: contain;
+}
+
+h1 {
+    font-family: "logo";
+    color: white;
+    font-size: 2em;
+}
+
+legend {
+    margin-bottom: 15px;
+} 
+
+.intro {
+    font-weight: bold; 
+    margin-left: 16px;   
+}
+
+form {
+    font-family: inherit;
+}
+
+.formBody {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fuck-wrap {
+    display: flex;
+    gap: 125px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 8px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    flex: 1; /* Allow inputs to grow and fill the available space */
+}
+
+.bgWrapper {
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logIn {
+    margin-left: 16px;
+    font-size: 0.7em;
+}
+
+button {
+    margin: 16px 16px;
+    font-family: inherit;
+    padding: 8px 20px;
+    font-weight: bold;
+    /* background-color: #a59378; */
+    background-image: url(images/supermediterraneantextured.jpeg);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    
+}
+
+input {
+    width: 160px;
+    height: 1.3em;
+    padding: 3px 6px;
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+    font-size: .6em;
+}
+
+label {
+    font-size: .6em;
+    color: #404855;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+input:invalid {
+    border: 2px solid rgb(255, 0, 0, 0.4);
+}
+  
+/* input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+} */
+  
+input:valid {
+    border: 1px solid black;
 }

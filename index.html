@@ -14,47 +14,119 @@
             
             
             <div class="leftHalf">
-                <img src="images/—Pngtree—red cassette audio tape vintage_6177172.png" alt="">
-                <h1>Studio Porn</h1>
+
+                
+                <div class="logo-wrap">
+                    <!-- <img class="icon" src="images/—Pngtree—red cassette audio tape vintage_6177172.png" alt=""> -->
+                    <h1>Best Studios Ever</h1>
+                </div>
 
             </div>
 
             <div class="rightHalf">
 
-                <p>This is not a real online service! But it should be, sign up below!</p>
+                <p class="intro">This is not a real online service, but it should be, sign up below!</p>
 
-                <form action="">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" name="first-name"/>
+                <form action="" class="mainForm">
 
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name"/>
+                    <div class="bgWrapper">
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"/>
+                        <div class="formBody">
 
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone"/>
+                            <legend>Input Info Below</legend>
 
-                    <label for="pwd">First Name</label>
-                    <input type="password" id="pwd" name="pwd"/>
+                            
+                            <div class="fuck-wrap">
 
-                    <button type="submit">Create Account</button>
+                                <div class="column">
+                                    <div class="field-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" name="first-name" placeholder="Ron" required/>
+                                    </div>
+                                    <div class="field-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="ron@hardwood.com" reuired/>
+                                    </div>
+                                    <div class="field-group">
+                                        <label for="pwd">Create Password</label>
+                                        <input type="password" id="pwd" name="pwd" required/>
+                                        <span id="message" style="font-size:small; color: red;"></span>
+                                    </div>
+                                </div>
 
-                    <p>Already have an account? <a href="">Log In</a></p>
+                                <div class="column">
+
+                                    <div class="field-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" name="last-name" placeholder="Jeremy" required/>
+                                    </div>
+
+                                    <div class="field-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" minlength="10" placeholder="123 123 1234" required/>
+                                    </div>
+
+                                    <div class="field-group">
+                                        <label for="confirm">Confirm Password</label>
+                                        <input type="password" id="confirm" name="confirm" required/>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    
+                    </div>
+
+
+                    <div class="btnWrap">
+                        <button type="submit">Create Account</button>
+                    </div>
+
+                    <p class="logIn">Already have an account? <a href="">Log In</a></p>
 
                 </form>
 
             </div>
 
-
-
-
         </div>
 
-
-
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Select the form
+    var form = document.querySelector(".mainForm");
+
+    form.onsubmit = function(event) {
+        // Prevent the default form submission to validate the passwords
+        event.preventDefault();
+
+        // Select the password and confirm password input fields
+        var pwd = document.getElementById("pwd").value;
+        var confirm = document.getElementById("confirm").value;
+        var message = document.getElementById("message");
+
+        // Compare the values of the two fields
+        if(pwd === confirm) {
+            // If they are the same, submit the form or do whatever next
+            message.style.color = 'green';
+            message.innerHTML = "Passwords match. Form submitting...";
+            // Here you could also submit the form manually if needed:
+            // form.submit();
+            
+            // Uncomment the line below to allow form submission
+            // event.target.submit();
+        } else {
+            // If they don't match, show an error message
+            message.style.color = 'red';
+            message.innerHTML = "Passwords do not match. Please try again.";
+            // Keeping the form from submitting by not calling form.submit();
+        }
+    };
+});
+    </script>
     
 </body>
 </html>
